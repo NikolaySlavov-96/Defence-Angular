@@ -8,5 +8,13 @@ import { Router } from '@angular/router'
 })
 export class HeaderComponent {
 
-  constructor(private router: Router) {}
+  get isLoggedIn() {
+    return true;
+  }
+
+  get user() {
+    return { name: 'Nikolay' }
+  }
+
+  constructor(private router: Router) { }
 }

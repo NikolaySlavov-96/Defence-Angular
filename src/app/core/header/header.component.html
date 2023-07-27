@@ -1,13 +1,23 @@
 <header>
     <nav>
-        <ul>
-            <li><a routerLink="/home">Home</a></li>
-            <li><a routerLink="/catalog">Catalog</a></li>
-            <li><a routerLink="/auth/login">Login</a></li>
-            <li><a routerLink="/auth/register">Register</a></li>
-            <li><a routerLink="/auth/logoutn">Logout</a></li>
-            <li><a routerLink="/cart">Cart</a></li>
-            <li><a routerLink="/about">About</a></li>
-        </ul>
+        <div class="header__logo">
+            <a routerLink="/"><i class="fas fa-server"></i></a>
+        </div>
+        <div class="header__menu">
+            <ul>
+                <li><a routerLink="/product/catalog">Catalog</a></li>
+                <li><a routerLink="/about">About</a></li>
+            </ul>
+            <ul *ngIf="!isLoggedIn">
+                <li><a routerLink="/auth/register">Register</a></li>
+                <li><a routerLink="/auth/login">Login</a></li>
+            </ul>
+            <ul *ngIf="isLoggedIn">
+                <!-- <li><a routerLink="/home"><i class="fas fa-home"></i>Home</a></li> -->
+                <li><a routerLink="/product/create">Create</a></li>
+                <li><a routerLink="/profil">{{user?.name}}'s profile</a></li>
+                <li><a routerLink="/logout">Logout</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
