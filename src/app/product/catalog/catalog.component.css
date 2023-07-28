@@ -1,0 +1,35 @@
+.catalog__section {
+    text-align: center;
+}
+
+.catalog__product {
+    width: 25%;
+    display: inline-block;
+    margin-left: 3%;
+    background-color: beige;
+    -webkit-box-shadow: 5px 7px 24px 4px rgba(106, 109, 78, 0.86);
+    box-shadow: 5px 7px 24px 4px rgba(106, 109, 78, 0.86);
+    border-radius: 2rem;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.product__picture img {
+    width: 50%;
+}
+
+.product__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.container__owenr {
+    margin: 0;
+    margin-left: 20px;
+
+}
+
+.container__button {
+    margin-right: 20px;
+}

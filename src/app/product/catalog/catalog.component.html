@@ -1,0 +1,16 @@
+<div *ngIf="errorFetching" class="error__fetcing">Error loading products</div>
+<div *ngIf="!productList" class="loader">Waiting information loaded</div>
+<section class="catalog__section">
+    <h1>Catalog with products</h1>
+    <article *ngFor="let product of productList" class="catalog__product">
+        <div class="product__picture">
+            <img src="/assets/interlI9.jpg" alt="name">
+        </div>
+        <h1 class="product__name">Product: </h1>
+        <p class="product__description">Description: </p>
+        <div class="product__container">
+            <p class="container__owenr">Owner of product: </p>
+            <button class="container__button" routerLink="/product/detail/">View</button>
+        </div>
+    </article>
+</section>
