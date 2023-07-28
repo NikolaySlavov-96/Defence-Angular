@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 export class HeaderComponent {
 
   get isLoggedIn() {
-    return true;
+    return false;
   }
 
   get user() {
