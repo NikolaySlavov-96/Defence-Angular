@@ -6,11 +6,15 @@
         <div class="product__picture">
             <img src="/assets/interlI9.jpg" alt="name">
         </div>
-        <h1 class="product__name">Product: </h1>
-        <p class="product__description">Description: </p>
+        <h1 class="product__name">Product: {{product.articul}}</h1>
+        <div class="product__information">
+            <p class="product__mark">mark: {{product.mark}}</p>
+            <p class="product__model">model: {{product.model}}</p>
+            <p class="product__description">Description: {{product.description}}</p>
+        </div>
         <div class="product__container">
             <p class="container__owenr">Owner of product: </p>
-            <button class="container__button" routerLink="/product/detail/">View</button>
+            <button class="container__button" routerLink="/product/detail/{{product._id}}">View</button>
         </div>
     </article>
 </section>

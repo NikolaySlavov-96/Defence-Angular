@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { ApiService } from 'src/app/api.service';
 import { IProduct } from '../../shared/interfaces';
+
 
 @Component({
   selector: 'app-catalog',
@@ -9,31 +12,19 @@ import { IProduct } from '../../shared/interfaces';
 })
 export class CatalogComponent implements OnInit {
 
-  productList: IProduct[] = [{
-    product: '2',
-    owner: '2',
-    descriptipn: '2',
-  },
-  {
-    product: '2',
-    owner: '2',
-    descriptipn: '2',
-  },
-  {
-    product: '2',
-    owner: '2',
-    descriptipn: '2',
-  },
-  {
-    product: '2',
-    owner: '2',
-    descriptipn: '2',
-  },
-  ];
+  productList: IProduct[] | null = null;
   errorFetching = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.apiService.loadProducts().subscribe({
+      next: (value) => {
+        this.productList = value;
+      },
+      error: (err) => {
+        this.errorFetching = true;
+      }
+    })
   }
 }
