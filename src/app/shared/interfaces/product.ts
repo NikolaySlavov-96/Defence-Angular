@@ -1,7 +1,11 @@
-
-
 export interface IProduct {
-    product: string,
+    _id: string,
+    articul: string,
+    mark: string,
+    model: string,
+    release: string,
+    description: string,
+    createAt: string,
     owner: string,
-    descriptipn: string,
+    isDelete: boolean
 }
