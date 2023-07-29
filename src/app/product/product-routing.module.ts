@@ -20,6 +20,10 @@ const routes: Routes = [
         },
         component: DetailProductComponent
     },
+    {
+        path: 'create',
+        component: CreateComponent
+    },
 ];
 
 export const ProductRoutingModule = RouterModule.forChild(routes);
