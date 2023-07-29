@@ -1,6 +1,8 @@
 import { RouterModule, Routes } from "@angular/router";
 import { CreateComponent } from "./create/create.component";
 import { CatalogComponent } from "./catalog/catalog.component";
+import { DetailProductComponent } from "./detail-product/detail-product.component";
+import { ProductResolver } from "./resolvers/product.resolver";
 
 const routes: Routes = [
     {
@@ -10,6 +12,13 @@ const routes: Routes = [
     {
         path: 'catalog',
         component: CatalogComponent
+    },
+    {
+        path: 'detail/:id',
+        resolve: {
+            product: ProductResolver
+        },
+        component: DetailProductComponent
     },
 ];
 

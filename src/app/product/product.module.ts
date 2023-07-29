@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateComponent } from './create/create.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { CatalogComponent } from './catalog/catalog.component';
+import { DetailProductComponent } from './detail-product/detail-product.component';
 
 
 
@@ -10,14 +11,16 @@ import { CatalogComponent } from './catalog/catalog.component';
   declarations: [
     CreateComponent,
     CatalogComponent,
+    DetailProductComponent,
   ],
   imports: [
-    CommonModule,
     ProductRoutingModule,
+    CommonModule,
   ],
   exports: [
     CreateComponent,
     CatalogComponent,
+    DetailProductComponent,
   ]
 })
 export class ProductModule { }
