@@ -1,5 +1,22 @@
 <section class="detail__section">
-    <div>
-        <h1>Test produict Detail {{product?.createAt}}</h1>
+    <div class="detail__container">
+        <div class="detail__img">
+            <img src={{product?.img}} alt="picture address">
+        </div>
+        <div class="detail__description">
+            <h1>Detail Page for <span>{{product?.articul}}</span></h1>
+            <p>Mark for product: <span>{{product?.mark}}</span></p>
+            <p>Model for product: <span>{{product?.model}}</span></p>
+            <p>Description: <span>{{product?.description}}</span></p>
+        </div>
+        <div *ngIf="hasLoged" class="detail__button">
+            <ng-container *ngIf="hasOwner">
+                <button routerLink="/product/edit/{{product?._id}}" class="btn edit">Edit</button>
+                <button routerLink="/product/detele/{{product?._id}}" class="btn delete">Delete</button>
+            </ng-container>
+            <ng-container *ngIf="!hasOwner">
+                <button routerLink="/cart/{{product?._id}}" class="btn buy">Buy Product</button>
+            </ng-container>
+        </div>
     </div>
 </section>

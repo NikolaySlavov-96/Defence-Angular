@@ -4,17 +4,17 @@
     <h1>Catalog with products</h1>
     <article *ngFor="let product of productList" class="catalog__product">
         <div class="product__picture">
-            <img src="/assets/interlI9.jpg" alt="name">
+            <img src={{product.img}} alt="picture address">
         </div>
-        <h1 class="product__name">Product: {{product.articul}}</h1>
+        <h1 class="product__name">Product: <span>{{product.articul}}</span></h1>
         <div class="product__information">
-            <p class="product__mark">mark: {{product.mark}}</p>
-            <p class="product__model">model: {{product.model}}</p>
-            <p class="product__description">Description: {{product.description}}</p>
+            <p class="product__mark">mark: <span>{{product.mark}}</span></p>
+            <p class="product__model">model: <span>{{product.model}}</span></p>
+            <p class="product__description">Description: <span>{{product.description}}</span></p>
         </div>
         <div class="product__container">
-            <p class="container__owenr">Owner of product: </p>
-            <button class="container__button" routerLink="/product/detail/{{product._id}}">View</button>
+            <p class="container__owenr">Owner of product: <span>Owner name</span></p>
+            <button class="btn" routerLink="/product/detail/{{product._id}}">View</button>
         </div>
     </article>
 </section>

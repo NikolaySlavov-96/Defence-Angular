@@ -1,0 +1,44 @@
+.detail__section {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.detail__container {
+    padding: 4rem 8rem;
+    border: none;
+    border-radius: 3rem;
+    background-color: beige;
+    -webkit-box-shadow: 5px 7px 24px 4px rgba(106, 109, 78, 0.86);
+    box-shadow: 5px 7px 24px 4px rgba(106, 109, 78, 0.86);
+}
+
+h1,
+p {
+    font-size: 18px;
+}
+
+.detail__description span {
+    font-size: 24px;
+}
+
+.detail__description {
+    margin-bottom: 3rem;
+}
+
+.edit {
+    margin-left: 2rem;
+    color: white;
+    background-color: rgb(102, 102, 11);
+}
+
+.delete {
+    margin-left: 3rem;
+    color: white;
+    background-color: black;
+}
+
+.buy {
+    background-color: rgb(133, 29, 29);
+    color: white;
+}

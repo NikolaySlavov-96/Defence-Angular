@@ -3,3 +3,9 @@ body {
     margin: 0 auto;
     padding: 0;
 }
+
+.btn {
+    background-color: #a9a9a991;
+    padding: 6px 18px;
+    border-radius: 8px;
+}

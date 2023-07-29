@@ -1,5 +1,6 @@
 export interface IProduct {
     _id: string,
+    img: string,
     articul: string,
     mark: string,
     model: string,
