@@ -1,0 +1,44 @@
+<section class="edit__section">
+    <h1>Create new product for salle</h1>
+    <div>
+        <form #form="ngForm" (ngSubmit)="editHandler(form)">
+            <div>
+                <label for="articul">Product Name:</label>
+                <input type="text" name="articul" #articul="ngModel" [(ngModel)]="oldProduct.articul" required
+                    [minlength]="5" id="productName">
+                <ng-container *ngIf="articul.touched">
+                    <p *ngIf="articul.errors?.['required']">Error required</p>
+                    <p *ngIf="articul.errors?.['minlength']">Errors minimal length</p>
+                </ng-container>
+            </div>
+
+            <div>
+                <label for="img">Img:</label>
+                <input type="text" name="img" #img="ngModel" [(ngModel)]="oldProduct.img" required [minlength]="3"
+                    id="img">
+            </div>
+            <div>
+                <label for="mark">Mark:</label>
+                <input type="text" name="mark" #mark="ngModel" [(ngModel)]="oldProduct.mark" required [minlength]="3"
+                    id="makr">
+            </div>
+            <div>
+                <label for="model">Model:</label>
+                <input type="text" name="model" #model="ngModel" [(ngModel)]="oldProduct.model" required [minlength]="3"
+                    id="model">
+            </div>
+            <div>
+                <label for="release">Release:</label>
+                <input type="text" name="release" #release="ngModel" [(ngModel)]="oldProduct.release" required
+                    [minlength]="3" id="release">
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <input type="text" name="description" #description="ngModel" [(ngModel)]="oldProduct.description"
+                    required [minlength]="10" id="description">
+            </div>
+
+            <button class="btn" [disabled]="form.invalid">Edit Product</button>
+        </form>
+    </div>
+</section>
