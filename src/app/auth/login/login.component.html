@@ -1,0 +1,22 @@
+<section class="login__section">
+    <form #form="ngForm" (ngSubmit)="loginHandler(form)">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" #username="ngModel" ngModel required id="username">
+            <ng-container *ngIf="username.touched">
+                <p *ngIf="username?.errors?.['required']">Username is required</p>
+            </ng-container>
+        </div>
+
+        <div class="password">
+            <label for="password">Password</label>
+            <input type="password" name="password" #password="ngModel" ngModel required id="password">
+            <ng-container *ngIf="password.touched">
+                <p *ngIf="password?.errors?.['required']">Password is required</p>
+            </ng-container>
+        </div>
+
+        <button [disabled]="form.invalid">Login in</button>
+        <p>Don't have a account <a routerLink="/auth/register">Sign In</a></p>
+    </form>
+</section>
