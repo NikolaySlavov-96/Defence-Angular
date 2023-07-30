@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -13,13 +14,14 @@ import { LogoutComponent } from './logout/logout.component';
   declarations: [
     RegisterComponent,
     LogoutComponent,
+    LoginComponent,
   ],
   imports: [
+    RouterModule,
     AuthRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
   ],
 })
 export class AuthModule { }

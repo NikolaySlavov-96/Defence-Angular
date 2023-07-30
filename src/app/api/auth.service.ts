@@ -53,6 +53,15 @@ export class AuthService implements OnDestroy {
       }));
   }
 
+  login(date: IUser | any) {
+    return this.httpClient.post<IUser>(`${apiURL}/auth/login`, date)
+      .pipe(tap((u) => {
+        console.log(u);
+        this.localStore.createLocal('token', u.accessToken);
+        this.user$$.next(u);
+      }))
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
