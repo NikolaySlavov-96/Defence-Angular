@@ -30,7 +30,7 @@ export class RegisterComponent {
     if (this.form.invalid) { return }
     const { email, username, pass: { password, rePassword } = {}, year } = this.form.value;
     this.authSercice.register({ email, username, password, rePassword, year }).subscribe(a => {
-      this.router.navigate(['/product/catalot']);
+      this.router.navigate(['/product/catalog']);
     })
   }
 }
