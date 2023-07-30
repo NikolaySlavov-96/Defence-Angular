@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
+import { ApiService as productService } from 'src/app/api/product.service';
 
 @Component({
   selector: 'app-create',
@@ -11,11 +11,11 @@ import { ApiService } from 'src/app/api.service';
 
 export class CreateComponent {
 
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private router: Router, private productService: productService) { }
 
   createProductHandler(form: NgForm) {
     if (form.invalid) { return }
-    this.apiService.createProduct(form.value).subscribe(p => {
+    this.productService.createProduct(form.value).subscribe(p => {
       this.router.navigate(['/catalog'])
     })
   }

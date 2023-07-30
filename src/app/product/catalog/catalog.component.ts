@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from 'src/app/api/product.service';
 import { IProduct } from '../../shared/interfaces';
 
 

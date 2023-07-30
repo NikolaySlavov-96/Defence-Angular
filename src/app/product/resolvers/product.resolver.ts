@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, ResolveData, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from "rxjs";
-import { ApiService } from "src/app/api.service";
+import { ApiService } from "src/app/api/product.service";
 import { IProduct } from "src/app/shared/interfaces";
 
 
