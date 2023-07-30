@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { environment as environmentProduct } from 'src/environments/environment';
 import { IProduct } from '../shared/interfaces';
+import { AuthService } from './auth.service';
 
 
 const apiURL = environment.apiURL;
@@ -16,7 +17,7 @@ export class ApiService {
 
   product: [] | null = null;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private authService: AuthService) { }
 
   loadProducts() {
     return this.httpClient.get<IProduct[]>(`${apiURL}/source/products`);
@@ -27,6 +28,7 @@ export class ApiService {
   }
 
   createProduct(data: IProduct) {
-    return this.httpClient.post<IProduct>(`${apiURL}/source/product`, data)
+    const token = this.authService?.user?.accessToken!;
+    return this.httpClient.post<IProduct>(`${apiURL}/source/product`, data, { headers: { 'content-type': 'application/json', 'author-d': token } })
   }
 }

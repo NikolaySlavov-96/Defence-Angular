@@ -46,7 +46,8 @@ export class AuthService implements OnDestroy {
   }
 
   logout() {
-    return this.httpClient.get<void>(`${apiURL}/auth/logout`)
+    const token = this.user?.accessToken!;
+    return this.httpClient.get<void>(`${apiURL}/auth/logout`, { headers: { 'content-type': 'application/json', 'author-d': token } })
       .pipe(tap((u) => {
         console.log(u);
         this.user$$.next(null)
