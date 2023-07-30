@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ApiService } from 'src/app/api/product.service';
+import { peroductService } from 'src/app/api/product.service';
 import { IProduct } from '../../shared/interfaces';
 
 
@@ -15,7 +15,7 @@ export class CatalogComponent implements OnInit {
   productList: IProduct[] | null = null;
   errorFetching = false;
 
-  constructor(private router: Router, private apiService: ApiService) { }
+  constructor(private router: Router, private apiService: peroductService) { }
 
   ngOnInit(): void {
     this.apiService.loadProducts().subscribe({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService as productService } from 'src/app/api/product.service';
+import { peroductService as productService } from 'src/app/api/product.service';
 
 @Component({
   selector: 'app-create',
