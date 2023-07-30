@@ -3,6 +3,7 @@ import { CreateComponent } from "./create/create.component";
 import { CatalogComponent } from "./catalog/catalog.component";
 import { DetailProductComponent } from "./detail-product/detail-product.component";
 import { ProductResolver } from "./resolvers/product.resolver";
+import { EditComponent } from "./edit/edit.component";
 
 const routes: Routes = [
     {
@@ -23,6 +24,13 @@ const routes: Routes = [
     {
         path: 'create',
         component: CreateComponent
+    },
+    {
+        path: 'edit/:id',
+        resolve: {
+            product: ProductResolver
+        },
+        component: EditComponent,
     },
 ];
 
