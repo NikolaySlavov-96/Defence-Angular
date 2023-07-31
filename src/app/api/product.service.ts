@@ -13,7 +13,7 @@ const apiURL = environment.apiURL;
 @Injectable({
   providedIn: 'root'
 })
-export class peroductService {
+export class ProductService {
 
   product: [] | null = null;
 
@@ -34,7 +34,11 @@ export class peroductService {
 
   editProduct(data: IProduct, id: string) {
     const token = this.authService?.user?.accessToken!;
-    // return this.httpClient.put<IProduct>(`${apiURL}/source/product/${id}`, data, { headers: { 'content-type': 'application/json', 'author-d': token } })
-    return this.httpClient.put<IProduct>(`http://localhost:3000/source/product/${id}`, data, { headers: { 'content-type': 'application/json', 'author-d': token } })
+    return this.httpClient.put<IProduct>(`${apiURL}/source/product/${id}`, data, { headers: { 'content-type': 'application/json', 'author-d': token } })
+  }
+
+  deleteProduct(id: string, data: {}) {
+    const token = this.authService?.user?.accessToken!;
+    return this.httpClient.delete(`${apiURL}/source/product/${id}`, { headers: { 'content-type': 'application/json', 'author-d': token } })
   }
 }

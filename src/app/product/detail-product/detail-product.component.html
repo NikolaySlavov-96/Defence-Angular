@@ -12,7 +12,7 @@
         <div *ngIf="hasLoged" class="detail__button">
             <ng-container *ngIf="hasOwner">
                 <button routerLink="/product/edit/{{product?._id}}" class="btn edit">Edit</button>
-                <button routerLink="/product/detele/{{product?._id}}" class="btn delete">Delete</button>
+                <button routerLink="/product/delete/{{product?._id}}" class="btn delete">Delete</button>
             </ng-container>
             <ng-container *ngIf="!hasOwner">
                 <button routerLink="/cart/{{product?._id}}" class="btn buy">Buy Product</button>
