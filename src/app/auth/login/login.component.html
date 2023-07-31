@@ -1,22 +1,25 @@
 <section class="login__section">
-    <form #form="ngForm" (ngSubmit)="loginHandler(form)">
-        <div>
-            <label for="username">Username</label>
-            <input type="text" name="username" #username="ngModel" ngModel required id="username">
-            <ng-container *ngIf="username.touched">
-                <p *ngIf="username?.errors?.['required']">Username is required</p>
-            </ng-container>
-        </div>
+    <h1 class="login__title">Login Page</h1>
+    <div class="form__container shadow">
+        <form #form="ngForm" (ngSubmit)="loginHandler(form)">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" #username="ngModel" ngModel required id="username">
+                <ng-container *ngIf="username.touched">
+                    <p class="error" *ngIf="username?.errors?.['required']">Required fields!</p>
+                </ng-container>
+            </div>
 
-        <div class="password">
-            <label for="password">Password</label>
-            <input type="password" name="password" #password="ngModel" ngModel required id="password">
-            <ng-container *ngIf="password.touched">
-                <p *ngIf="password?.errors?.['required']">Password is required</p>
-            </ng-container>
-        </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" name="password" #password="ngModel" ngModel required id="password">
+                <ng-container *ngIf="password.touched">
+                    <p class="error" *ngIf="password?.errors?.['required']">Required fields!</p>
+                </ng-container>
+            </div>
 
-        <button class="btn" [disabled]="form.invalid">Login in</button>
-        <p>Don't have a account <a routerLink="/auth/register">Sign In</a></p>
-    </form>
+            <button class="btn btn-login" [disabled]="form.invalid">Login in</button>
+            <p class="login__account">Don't have a account <a routerLink="/auth/register">Sign In</a></p>
+        </form>
+    </div>
 </section>

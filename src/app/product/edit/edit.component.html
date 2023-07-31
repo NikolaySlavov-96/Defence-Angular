@@ -7,8 +7,8 @@
                 <input type="text" name="articul" #articul="ngModel" [(ngModel)]="oldProduct.articul" required
                     [minlength]="5" id="productName">
                 <ng-container *ngIf="articul.touched">
-                    <p *ngIf="articul.errors?.['required']">Error required</p>
-                    <p *ngIf="articul.errors?.['minlength']">Errors minimal length</p>
+                    <p class="error" *ngIf="articul.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="articul.errors?.['minlength']">Minimal length is 5 characters</p>
                 </ng-container>
             </div>
 
@@ -16,26 +16,46 @@
                 <label for="img">Img:</label>
                 <input type="text" name="img" #img="ngModel" [(ngModel)]="oldProduct.img" required [minlength]="3"
                     id="img">
+                <ng-container *ngIf="img.touched">
+                    <p class="error" *ngIf="img.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="img.errors?.['minlength']">Minimal length is 5 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="mark">Mark:</label>
                 <input type="text" name="mark" #mark="ngModel" [(ngModel)]="oldProduct.mark" required [minlength]="3"
                     id="makr">
+                <ng-container *ngIf="mark.touched">
+                    <p class="error" *ngIf="mark.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="mark.errors?.['minlength']">Minimal length is 5 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="model">Model:</label>
                 <input type="text" name="model" #model="ngModel" [(ngModel)]="oldProduct.model" required [minlength]="3"
                     id="model">
+                <ng-container *ngIf="model.touched">
+                    <p class="error" *ngIf="model.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="model.errors?.['minlength']">Minimal length is 5 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="release">Release:</label>
                 <input type="text" name="release" #release="ngModel" [(ngModel)]="oldProduct.release" required
                     [minlength]="3" id="release">
+                <ng-container *ngIf="release.touched">
+                    <p class="error" *ngIf="release.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="release.errors?.['minlength']">Minimal length is 5 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="description">Description:</label>
                 <input type="text" name="description" #description="ngModel" [(ngModel)]="oldProduct.description"
                     required [minlength]="10" id="description">
+                <ng-container *ngIf="description.touched">
+                    <p class="error" *ngIf="description.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="description.errors?.['minlength']">Minimal length is 5 characters</p>
+                </ng-container>
             </div>
 
             <button class="btn" [disabled]="form.invalid">Edit Product</button>

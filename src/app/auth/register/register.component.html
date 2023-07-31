@@ -1,50 +1,57 @@
 <section class="register__section">
-    <form [formGroup]="form" (ngSubmit)="registerHandler()">
-        <div class="email">
-            <label for="email">Email</label>
-            <input type="email" formControlName="email" id="email">
-            <ng-container *ngIf="form.get('email')?.touched">
-                <p *ngIf="form.get('email')?.errors?.['required']">Required</p>
-                <!-- <p *ngIf="form.get('email')?.errors?.['minlength']">Minimal length</p> -->
-            </ng-container>
-        </div>
-
-        <div class="username">
-            <label for="username">Username</label>
-            <input type="text" formControlName="username" id="username">
-            <ng-container *ngIf="form.get('username')?.touched">
-                <p *ngIf="form.get('username')?.errors?.['required']">Required</p>
-                <p *ngIf="form.get('username')?.errors?.['minlength']">Min length</p>
-            </ng-container>
-        </div>
-
-        <ng-container formGroupName="pass">
-            <div class="password">
-                <label for="password">Password</label>
-                <input type="password" formControlName="password" id="password">
-                <ng-container *ngIf="form.get('pass')?.get('password')?.touched">
-                    <p *ngIf="form.get('pass')?.get('password')?.errors?.['required']">Required</p>
-                    <p *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">Min Length</p>
+    <div class="form__container shadow">
+        <form [formGroup]="form" (ngSubmit)="registerHandler()">
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" id="email">
+                <ng-container *ngIf="form.get('email')?.touched">
+                    <p class="error" *ngIf="form.get('email')?.errors?.['required']">Required fields!</p>
                 </ng-container>
             </div>
 
-            <div class="repeatPassword">
-                <label for="rePassword">Repeat Password</label>
-                <input type="password" formControlName="rePassword" id="rePassword">
-
-                <ng-container
-                    *ngIf="form.get('pass')?.errors?.['sameValueGroupValidator'] && form.get('pass')?.get('rePassword')?.touched">
-                    <p>Repeat Password don't match</p>
+            <div class="username">
+                <label for="username">Username</label>
+                <input type="text" formControlName="username" id="username">
+                <ng-container *ngIf="form.get('username')?.touched">
+                    <p class="error" *ngIf="form.get('username')?.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">Minimal length is 6 characters
+                    </p>
                 </ng-container>
             </div>
-        </ng-container>
 
-        <div class="year">
-            <label for="year">Year</label>
-            <input type="number" formControlName="year" id="year">
-        </div>
+            <ng-container formGroupName="pass">
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" id="password">
+                    <ng-container *ngIf="form.get('pass')?.get('password')?.touched">
+                        <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['required']">Required
+                            fields!</p>
+                        <p class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">Minimal length
+                            is 5 characters</p>
+                    </ng-container>
+                </div>
 
-        <button class="btn" [disabled]="form.invalid">Register</button>
-        <p>Have a account <a routerLink="/auth/login">Sign Up</a></p>
-    </form>
+                <div class="repeatPassword">
+                    <label for="rePassword">Repeat Password</label>
+                    <input type="password" formControlName="rePassword" id="rePassword">
+
+                    <ng-container
+                        *ngIf="form.get('pass')?.errors?.['sameValueGroupValidator'] && form.get('pass')?.get('rePassword')?.touched">
+                        <p class="error">Repeat Password don't match</p>
+                    </ng-container>
+                </div>
+            </ng-container>
+
+            <div class="year">
+                <label for="year">Year</label>
+                <input type="number" formControlName="year" id="year">
+                <ng-container *ngIf="form.get('year')?.touched">
+                    <p class="error" *ngIf="form.get('year')?.errors?.['required']">Required fields!</p>
+                </ng-container>
+            </div>
+
+            <button class="btn btn-register" [disabled]="form.invalid">Register</button>
+            <p class="register__account">Have a account <a routerLink="/auth/login">Sign Up</a></p>
+        </form>
+    </div>
 </section>

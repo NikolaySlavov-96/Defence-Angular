@@ -16,26 +16,46 @@
                 <label for="img">Img:</label>
                 <input type="text" name="img" #img="ngModel" ngModel required [minlength]="3" id="img"
                     placeholder="http://imgaddres">
+                <ng-container *ngIf="img.touched">
+                    <p class="error" *ngIf="img.errors?.['required']">Fields is Required!</p>
+                    <p class="error" *ngIf="img.errors?.['minlength']">Minilam Length is 3 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="mark">Mark:</label>
                 <input type="text" name="mark" #mark="ngModel" ngModel required [minlength]="3" id="makr"
                     placeholder="Apple">
+                <ng-container *ngIf="mark.touched">
+                    <p class="error" *ngIf="mark.errors?.['required']">Fields is Required!</p>
+                    <p class="error" *ngIf="mark.errors?.['minlength']">Minilam Length is 3 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="model">Model:</label>
                 <input type="text" name="model" #model="ngModel" ngModel required [minlength]="3" id="model"
                     placeholder="MackBook Air">
+                <ng-container *ngIf="model.touched">
+                    <p class="error" *ngIf="model.errors?.['required']">Fields is Required!</p>
+                    <p class="error" *ngIf="model.errors?.['minlength']">Minilam Length is 3 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="release">Release:</label>
                 <input type="text" name="release" #release="ngModel" ngModel required [minlength]="3" id="release"
                     placeholder="Today">
+                <ng-container *ngIf="release.touched">
+                    <p class="error" *ngIf="release.errors?.['required']">Fields is Required!</p>
+                    <p class="error" *ngIf="release.errors?.['minlength']">Minilam Length is 3 characters</p>
+                </ng-container>
             </div>
             <div>
                 <label for="description">Description:</label>
                 <input type="text" name="description" #description="ngModel" ngModel required [minlength]="10"
                     id="description" placeholder="Perfect quality product">
+                <ng-container *ngIf="description.touched">
+                    <p class="error" *ngIf="description.errors?.['required']">Fields is Required!</p>
+                    <p class="error" *ngIf="description.errors?.['minlength']">Minilam Length is 10 characters</p>
+                </ng-container>
             </div>
 
             <button class="btn" [disabled]="form.invalid">Create new product</button>

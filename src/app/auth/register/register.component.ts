@@ -13,7 +13,7 @@ import { sameValueGroupValidator } from 'src/app/shared/validators/same-value-gr
 export class RegisterComponent {
 
   form = this.formBuild.group({
-    email: ['', [Validators.required]],
+    email: ['', Validators.required],
     username: ['', Validators.required, Validators.minLength(6)],
     pass: this.formBuild.group({
       password: ['', Validators.required, Validators.minLength(5)],
@@ -21,7 +21,7 @@ export class RegisterComponent {
     }, {
       validators: [sameValueGroupValidator('password', 'rePassword')]
     }),
-    year: ['', Validators.minLength(1)],
+    year: ['', Validators.required],
   })
 
   constructor(private authSercice: AuthService, private router: Router, private formBuild: FormBuilder) { }
