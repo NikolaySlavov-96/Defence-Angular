@@ -1,13 +1,13 @@
 <section class="detail__section">
-    <div class="detail__container">
+    <article class="detail__container shadow">
         <div class="detail__img">
             <img src={{product?.img}} alt="picture address">
         </div>
         <div class="detail__description">
-            <h1>Detail Page for <span>{{product?.articul}}</span></h1>
-            <p>Mark for product: <span>{{product?.mark}}</span></p>
-            <p>Model for product: <span>{{product?.model}}</span></p>
-            <p>Description: <span>{{product?.description}}</span></p>
+            <h1 class="prop">Detail of: <span class="span">{{product?.articul}}</span></h1>
+            <p class="prop">Mark: <span class="span">{{product?.mark}}</span></p>
+            <p class="prop">Model: <span class="span">{{product?.model}}</span></p>
+            <p class="prop">Description: <span class="span">{{product?.description}}</span></p>
         </div>
         <div *ngIf="hasLoged" class="detail__button">
             <ng-container *ngIf="hasOwner">
@@ -18,5 +18,5 @@
                 <button routerLink="/cart/{{product?._id}}" class="btn buy">Buy Product</button>
             </ng-container>
         </div>
-    </div>
+    </article>
 </section>

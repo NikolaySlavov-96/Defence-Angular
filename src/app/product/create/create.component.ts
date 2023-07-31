@@ -16,7 +16,7 @@ export class CreateComponent {
   createProductHandler(form: NgForm) {
     if (form.invalid) { return }
     this.productService.createProduct(form.value).subscribe(p => {
-      this.router.navigate(['/catalog'])
+      this.router.navigate(['/product/catalog'])
     })
   }
 }

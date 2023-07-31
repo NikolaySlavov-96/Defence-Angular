@@ -1,29 +1,31 @@
 .detail__section {
+    padding: 2rem;
     display: flex;
     justify-content: center;
-    padding-top: 2rem;
 }
 
 .detail__container {
-    padding: 4rem 8rem;
+    padding: 2rem 4rem 2.5rem 4rem;
     border: none;
     border-radius: 3rem;
-    background-color: beige;
-    -webkit-box-shadow: 5px 7px 24px 4px rgba(106, 109, 78, 0.86);
-    box-shadow: 5px 7px 24px 4px rgba(106, 109, 78, 0.86);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 35%;
 }
 
-h1,
-p {
-    font-size: 18px;
+.detail__img {
+    /* display: inline-block; */
+    text-align: center;
 }
 
-.detail__description span {
-    font-size: 24px;
+.detail__img img {
+    width: 30%;
 }
 
 .detail__description {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
 }
 
 .edit {
@@ -41,4 +43,15 @@ p {
 .buy {
     background-color: rgb(133, 29, 29);
     color: white;
+}
+
+.btn:hover {
+    background-color: aliceblue;
+    color: red;
+    border-color: aliceblue;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #f5f5dc;
 }

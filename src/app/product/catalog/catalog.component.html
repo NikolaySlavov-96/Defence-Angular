@@ -1,20 +1,20 @@
 <div *ngIf="errorFetching" class="error__fetcing">Error loading products</div>
 <div *ngIf="!productList" class="loader">Waiting information loaded</div>
 <section class="catalog__section">
-    <h1>Catalog with products</h1>
-    <article *ngFor="let product of productList" class="catalog__product">
+    <h1 class="section__title">Catalog with products</h1>
+    <article *ngFor="let product of productList" class="catalog__product shadow">
         <div class="product__picture">
             <img src={{product.img}} alt="picture address">
         </div>
-        <h1 class="product__name">Product: <span>{{product.articul}}</span></h1>
+        <h1 class="prop">Product: <span class="span">{{product.articul}}</span></h1>
         <div class="product__information">
-            <p class="product__mark">mark: <span>{{product.mark}}</span></p>
-            <p class="product__model">model: <span>{{product.model}}</span></p>
-            <p class="product__description">Description: <span>{{product.description}}</span></p>
+            <p class="prop">mark: <span class="span">{{product.mark}}</span></p>
+            <p class="prop">model: <span class="span">{{product.model}}</span></p>
+            <!-- <p class="prop">Description: <span class="span">{{product.description}}</span></p> -->
         </div>
         <div class="product__container">
-            <p class="container__owenr">Owner of product: <span>Owner name</span></p>
-            <button class="btn" routerLink="/product/detail/{{product._id}}">View</button>
+            <p class="prop owner">Owner: <span class="span">{{product.owner.username}}</span></p>
+            <button class="btn btn-view" routerLink="/product/detail/{{product._id}}">View</button>
         </div>
     </article>
 </section>

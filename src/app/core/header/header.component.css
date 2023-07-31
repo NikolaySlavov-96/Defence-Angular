@@ -2,8 +2,12 @@
     box-sizing: border-box;
 }
 
+header {
+    padding: 10px 14px;
+}
+
 nav {
-    background-color: antiquewhite;
+    border-radius: 16px;
     padding: 10px;
     display: flex;
     justify-content: space-between;

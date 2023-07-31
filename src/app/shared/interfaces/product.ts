@@ -7,6 +7,6 @@ export interface IProduct {
     release: string,
     description: string,
     createAt: string,
-    owner: string,
+    owner: { username: string },
     isDelete: boolean
 }
