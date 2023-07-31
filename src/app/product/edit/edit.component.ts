@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { peroductService } from 'src/app/api/product.service';
+import { AuthService } from 'src/app/api/auth.service';
+import { ProductService } from 'src/app/api/product.service';
 
 @Component({
   selector: 'app-edit',
@@ -17,17 +18,23 @@ export class EditComponent {
     model: '',
     release: '',
     description: '',
-    _id: ''
+    _id: '',
+    owner: '',
   };
 
-  constructor(private router: Router, private activateRouter: ActivatedRoute, private productService: peroductService) {
+  user = {
+    id: '',
+  };
+
+  constructor(private router: Router, private activateRouter: ActivatedRoute, private productService: ProductService, private injector: Injector) {
     this.oldProduct = this.activateRouter.snapshot.data?.['product'][0];
-    console.log(this.oldProduct);
+    const userDate = injector.get(AuthService);
+    this.user.id = userDate?.user?._id!;
   }
 
   editHandler(form: NgForm) {
-    console.log(form.value)
     if (form.invalid) { return }
+    if (this.user?.id !== this.oldProduct.owner) { return }
     this.productService.editProduct(form.value, this.oldProduct._id).subscribe(p =>
       this.router.navigate(['/product/catalog']));
   }
