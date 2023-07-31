@@ -28,6 +28,10 @@
     display: inline-block;
 }
 
+.detail__button {
+    width: 50%;
+}
+
 .edit {
     margin-left: 2rem;
     color: white;

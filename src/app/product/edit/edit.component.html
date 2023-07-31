@@ -1,9 +1,9 @@
 <section class="edit__section">
-    <h1>Create new product for salle</h1>
-    <div>
+    <h1>Edit product for salle</h1>
+    <div class="form__container shadow">
         <form #form="ngForm" (ngSubmit)="editHandler(form)">
             <div>
-                <label for="articul">Product Name:</label>
+                <label for="articul">Product Type:</label>
                 <input type="text" name="articul" #articul="ngModel" [(ngModel)]="oldProduct.articul" required
                     [minlength]="5" id="productName">
                 <ng-container *ngIf="articul.touched">

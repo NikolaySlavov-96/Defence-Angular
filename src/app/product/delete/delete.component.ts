@@ -13,6 +13,9 @@ export class DeleteComponent {
   product = {
     owner: '',
     _id: '',
+    articul: '',
+    mark: '',
+    model: '',
   }
 
   user = {

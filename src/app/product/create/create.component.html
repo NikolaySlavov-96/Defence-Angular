@@ -1,36 +1,41 @@
 <section class="create__section">
-    <h1>Create new product for salle</h1>
-    <div>
+    <h1>Create product for salle</h1>
+    <div class="form__container shadow">
         <form #form="ngForm" (ngSubmit)="createProductHandler(form)">
             <div>
-                <label for="articul">Product Name:</label>
-                <input type="text" name="articul" #articul="ngModel" ngModel required [minlength]="5" id="productName">
+                <label for="articul">Product type:</label>
+                <input type="text" name="articul" #articul="ngModel" ngModel required [minlength]="5" id="productName"
+                    placeholder="type articul">
                 <ng-container *ngIf="articul.touched">
-                    <p *ngIf="articul.errors?.['required']">Error required</p>
-                    <p *ngIf="articul.errors?.['minlength']">Errors minimal length</p>
+                    <p class="error" *ngIf="articul.errors?.['required']">Required fields!</p>
+                    <p class="error" *ngIf="articul.errors?.['minlength']">Minimal length is 5 characters</p>
                 </ng-container>
             </div>
 
             <div>
                 <label for="img">Img:</label>
-                <input type="text" name="img" #img="ngModel" ngModel required [minlength]="3" id="img">
+                <input type="text" name="img" #img="ngModel" ngModel required [minlength]="3" id="img"
+                    placeholder="http://imgaddres">
             </div>
             <div>
                 <label for="mark">Mark:</label>
-                <input type="text" name="mark" #mark="ngModel" ngModel required [minlength]="3" id="makr">
+                <input type="text" name="mark" #mark="ngModel" ngModel required [minlength]="3" id="makr"
+                    placeholder="Apple">
             </div>
             <div>
                 <label for="model">Model:</label>
-                <input type="text" name="model" #model="ngModel" ngModel required [minlength]="3" id="model">
+                <input type="text" name="model" #model="ngModel" ngModel required [minlength]="3" id="model"
+                    placeholder="MackBook Air">
             </div>
             <div>
                 <label for="release">Release:</label>
-                <input type="text" name="release" #release="ngModel" ngModel required [minlength]="3" id="release">
+                <input type="text" name="release" #release="ngModel" ngModel required [minlength]="3" id="release"
+                    placeholder="Today">
             </div>
             <div>
                 <label for="description">Description:</label>
                 <input type="text" name="description" #description="ngModel" ngModel required [minlength]="10"
-                    id="description">
+                    id="description" placeholder="Perfect quality product">
             </div>
 
             <button class="btn" [disabled]="form.invalid">Create new product</button>
