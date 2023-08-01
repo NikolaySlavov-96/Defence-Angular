@@ -10,7 +10,7 @@
         <div class="product__information">
             <p class="prop">mark: <span class="span">{{product.mark}}</span></p>
             <p class="prop">model: <span class="span">{{product.model}}</span></p>
-            <!-- <p class="prop">Description: <span class="span">{{product.description}}</span></p> -->
+            <p class="prop">Create: <span>{{product.createAt | elapsedTime}}</span></p>
         </div>
         <div class="product__container">
             <p class="prop owner">Owner: <span class="span">{{product.owner.username}}</span></p>

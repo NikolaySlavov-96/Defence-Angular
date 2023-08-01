@@ -8,6 +8,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { DeleteComponent } from './delete/delete.component';
     ProductRoutingModule,
     CommonModule,
     FormsModule,
+    SharedModule,
   ],
   exports: [
     CreateComponent,

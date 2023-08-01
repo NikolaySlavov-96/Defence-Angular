@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { AuthenticateComponent } from './authenticate/authenticate/authenticate.component';
 import { appInterceptorProvider } from './app.interceptor';
 import { API_ERROR } from './shared/constants';
+import { SharedModule } from './shared/shared.module';
 import { BehaviorSubject } from 'rxjs';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { BehaviorSubject } from 'rxjs';
     CoreModule,
     ProductModule,
     AuthModule,
+    SharedModule,
   ],
   providers: [
     appInterceptorProvider,
