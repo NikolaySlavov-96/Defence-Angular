@@ -49,7 +49,7 @@ export class AuthService implements OnDestroy {
     const token = this.user?.accessToken!;
     return this.httpClient.get<void>(`${apiURL}/auth/logout`, { headers: { 'content-type': 'application/json', 'author-d': token } })
       .pipe(tap((u) => {
-        console.log(u);
+        this.localStore.createLocal('token', '');
         this.user$$.next(null)
       }));
   }
@@ -57,7 +57,6 @@ export class AuthService implements OnDestroy {
   login(date: IUser | any) {
     return this.httpClient.post<IUser>(`${apiURL}/auth/login`, date)
       .pipe(tap((u) => {
-        console.log(u);
         this.localStore.createLocal('token', u.accessToken);
         this.user$$.next(u);
       }))
