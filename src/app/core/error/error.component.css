@@ -1,0 +1,15 @@
+.error__section {
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+div {
+    padding: 10px;
+    border-radius: 3rem;
+}
+
+div p {
+    color: red;
+}
