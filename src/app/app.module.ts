@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
 import { AuthenticateComponent } from './authenticate/authenticate/authenticate.component';
+import { appInterceptorProvider } from './app.interceptor';
+import { API_ERROR } from './shared/constants';
+import { BehaviorSubject } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,13 @@ import { AuthenticateComponent } from './authenticate/authenticate/authenticate.
     ProductModule,
     AuthModule,
   ],
-  providers: [],
+  providers: [
+    appInterceptorProvider,
+    {
+      provide: API_ERROR,
+      useValue: new BehaviorSubject(null),
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
