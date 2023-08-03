@@ -9,19 +9,31 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      title: 'Computer Shop'
+    }
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    data: {
+      title: 'About'
+    }
   },
   {
     path: 'not-found',
     component: PageNotFoundComponent,
+    data: {
+      title: 'Page Not Found'
+    }
   },
   {
     path: 'error',
     component: ErrorComponent,
+    data: {
+      title: 'Error'
+    }
   },
   {
     path: 'auth',
@@ -33,7 +45,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'not-found'
+    redirectTo: 'not-found',
   }
 ];
 

@@ -9,22 +9,27 @@ import { DeleteComponent } from "./delete/delete.component";
 const routes: Routes = [
     {
         path: 'create',
-        component: CreateComponent
+        component: CreateComponent,
+        data: {
+            title: 'Create'
+        }
     },
     {
         path: 'catalog',
-        component: CatalogComponent
+        component: CatalogComponent,
+        data: {
+            title: 'Catalog'
+        }
     },
     {
         path: 'detail/:id',
         resolve: {
             product: ProductResolver
         },
-        component: DetailProductComponent
-    },
-    {
-        path: 'create',
-        component: CreateComponent
+        component: DetailProductComponent,
+        data: {
+            title: 'Detail'
+        }
     },
     {
         path: 'edit/:id',
@@ -32,6 +37,9 @@ const routes: Routes = [
             product: ProductResolver
         },
         component: EditComponent,
+        data: {
+            title: 'Edit'
+        }
     },
     {
         path: 'delete/:id',
@@ -39,6 +47,9 @@ const routes: Routes = [
             product: ProductResolver,
         },
         component: DeleteComponent,
+        data: {
+            title: 'Delete'
+        }
     },
 ];
 
