@@ -1,3 +1,3 @@
 export const environment = {
-    apiURL: 'https://slavo-v.top:5055'
+    apiURL: 'https://api-defence.slavo-v.dev'
 };
