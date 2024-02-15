@@ -1,3 +1,20 @@
+#Introduction of Project
+
+My project represent online platform for selling product from many sellers. In it you can add products from any user with an account, as well as comment on published products. You can view the project at: https://angular.slavo-v.dev
+
+#Functionality
+
+If you are a user with account you can create product and commentars. For adding commentars is required you can didn't owner for product. Any product or comment owner can edit or delete what has been added. Guest can view only products and comments.
+
+The application uses API with address: https://api-defence.slavo-v.dev which uses for database mongo atlas.
+Repository of API can be view in: https://github.com/NikolaySlavov-96/API-Defence
+
+#Using of application
+
+You can clone or download repository and then you only need to download all the library with npm install. This application using localstorage in your browser.
+
+
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
